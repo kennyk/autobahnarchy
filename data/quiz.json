@@ -1,0 +1,72 @@
+[
+  {
+    "id": "q-001",
+    "relatedRuleId": "sign-001",
+    "questionType": "sign",
+    "image": "assets/signs/priority-road.png",
+    "questionText": "What does this yellow diamond sign mean?",
+    "answers": [
+      { "text": "You have priority at upcoming intersections", "correct": true },
+      { "text": "Caution: construction zone ahead", "correct": false },
+      { "text": "Yield to all traffic", "correct": false },
+      { "text": "None of the above", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-002",
+    "relatedRuleId": "sign-002",
+    "questionType": "sign",
+    "image": "assets/signs/end-priority.png",
+    "questionText": "What does the crossed-out yellow diamond mean?",
+    "answers": [
+      { "text": "End of priority road - follow normal rules", "correct": true },
+      { "text": "No parking zone begins", "correct": false },
+      { "text": "End of speed limit", "correct": false },
+      { "text": "None of the above", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-003",
+    "relatedRuleId": "verbal-001",
+    "questionType": "verbal",
+    "image": null,
+    "questionText": "At an unmarked intersection in Germany, who has right-of-way?",
+    "answers": [
+      { "text": "Vehicle approaching from the RIGHT", "correct": true },
+      { "text": "Vehicle approaching from the LEFT", "correct": false },
+      { "text": "Whoever arrives first", "correct": false },
+      { "text": "None of the above", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-004",
+    "relatedRuleId": "sign-003",
+    "questionType": "sign",
+    "image": "assets/signs/town-entry.png",
+    "questionText": "What happens when you see a yellow town name sign?",
+    "answers": [
+      { "text": "Speed limit becomes 50 km/h unless posted otherwise", "correct": true },
+      { "text": "Speed limit becomes 30 km/h", "correct": false },
+      { "text": "No change to speed limit", "correct": false },
+      { "text": "None of the above", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-005",
+    "relatedRuleId": "sign-004",
+    "questionType": "verbal",
+    "image": null,
+    "questionText": "What is the mandatory speed limit on the German Autobahn?",
+    "answers": [
+      { "text": "There is no mandatory limit, but 130 km/h is recommended", "correct": true },
+      { "text": "120 km/h at all times", "correct": false },
+      { "text": "No limit whatsoever, no recommendations", "correct": false },
+      { "text": "None of the above", "correct": false }
+    ],
+    "multiSelect": false
+  }
+]
