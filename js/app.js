@@ -1,3 +1,5 @@
+import { showScreen, initTitleScreen } from './screens.js';
+
 // Game state
 const state = {
   currentScreen: 'title',
@@ -12,10 +14,20 @@ const state = {
   selectedQuizQuestions: []
 };
 
+// Handle player count selection
+function handlePlayerSelect(count) {
+  state.playerCount = count;
+  console.log(`Selected ${count} player(s)`);
+  // TODO: transition to study screen
+  showScreen('study');
+}
+
 // Initialize app
 async function init() {
   console.log('Autobahnarchy initializing...');
   registerServiceWorker();
+  initTitleScreen(handlePlayerSelect);
+  showScreen('title');
 }
 
 // Register service worker

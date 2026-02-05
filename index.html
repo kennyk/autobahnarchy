@@ -15,7 +15,23 @@
 </head>
 <body>
   <div id="game-container">
-    <!-- Screens injected here -->
+    <!-- Title Screen -->
+    <div id="screen-title" class="screen active">
+      <h1 class="title">AUTOBAHNARCHY</h1>
+      <div class="menu">
+        <button class="btn" data-players="1">1 PLAYER</button>
+        <button class="btn" data-players="2">2 PLAYERS</button>
+      </div>
+    </div>
+
+    <!-- Study Screen -->
+    <div id="screen-study" class="screen"></div>
+
+    <!-- Quiz Screen -->
+    <div id="screen-quiz" class="screen"></div>
+
+    <!-- Results Screen -->
+    <div id="screen-results" class="screen"></div>
   </div>
   <script type="module" src="js/app.js"></script>
 </body>
