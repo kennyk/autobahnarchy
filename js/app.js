@@ -1,4 +1,4 @@
-import { showScreen, initTitleScreen, initStudyScreen, initQuizScreen, renderRule, renderQuestion, updateAnswerSelection, showAnswerFeedback, hideFeedback } from './screens.js';
+import { showScreen, initTitleScreen, initStudyScreen, initQuizScreen, initResultsScreen, renderRule, renderQuestion, updateAnswerSelection, showAnswerFeedback, hideFeedback, renderSinglePlayerResults, renderTwoPlayerResults } from './screens.js';
 import { selectQuestions, checkAnswer, calculateScore, determineWinner, generateSeed } from './quiz.js';
 
 // Game state
@@ -159,9 +159,31 @@ function handleSubmitAnswer() {
 
 // Show results screen
 function showResults() {
-  console.log('Quiz complete, showing results');
-  // TODO: implement results screen
+  const player1Score = calculateScore(state.player1Answers);
+
+  if (state.playerCount === 1) {
+    // Get missed question texts
+    const missedQuestions = state.player1Answers
+      .filter(a => !a.correct)
+      .map(a => {
+        const q = state.selectedQuizQuestions.find(q => q.id === a.questionId);
+        return q ? q.questionText : '';
+      })
+      .filter(t => t);
+
+    renderSinglePlayerResults(player1Score, missedQuestions);
+  } else {
+    const player2Score = calculateScore(state.player2Answers);
+    const result = determineWinner(player1Score, player2Score);
+    renderTwoPlayerResults(result);
+  }
+
   showScreen('results');
+}
+
+// Handle play again button
+function handlePlayAgain() {
+  showScreen('title');
 }
 
 // Initialize app
@@ -172,6 +194,7 @@ async function init() {
   initTitleScreen(handlePlayerSelect);
   initStudyScreen(handleNextRule, handleStartQuiz);
   initQuizScreen(handleSubmitAnswer);
+  initResultsScreen(handlePlayAgain);
   showScreen('title');
 }
 

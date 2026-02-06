@@ -111,3 +111,60 @@ export function hideFeedback() {
 export function initQuizScreen(onSubmit) {
   document.getElementById('btn-submit-answer').addEventListener('click', onSubmit);
 }
+
+// Render results screen for 1 player
+export function renderSinglePlayerResults(score, missedQuestions) {
+  const content = document.getElementById('results-content');
+
+  let html = `
+    <div class="result-card">
+      <div class="result-player">MASHA</div>
+      <div class="result-score">${score.correct}/${score.total}</div>
+      <div class="result-percentage">${score.percentage}%</div>
+  `;
+
+  if (missedQuestions.length > 0) {
+    html += `
+      <div class="missed-questions">
+        <h4>REVIEW THESE:</h4>
+        ${missedQuestions.map(q => `<div class="missed-item">• ${q}</div>`).join('')}
+      </div>
+    `;
+  }
+
+  html += '</div>';
+  content.innerHTML = html;
+}
+
+// Render results screen for 2 players
+export function renderTwoPlayerResults(result) {
+  const content = document.getElementById('results-content');
+
+  let winnerHtml = '';
+  if (result.winner === 'tie') {
+    winnerHtml = `<div class="tie-announcement">IT'S A TIE!</div>`;
+  } else {
+    winnerHtml = `<div class="winner-announcement">${result.winner.toUpperCase()} WINS!</div>`;
+  }
+
+  const html = `
+    ${winnerHtml}
+    <div class="result-card">
+      <div class="result-player">MASHA</div>
+      <div class="result-score">${result.player1Score.correct}/${result.player1Score.total}</div>
+      <div class="result-percentage">${result.player1Score.percentage}%</div>
+    </div>
+    <div class="result-card">
+      <div class="result-player">BOBBY</div>
+      <div class="result-score">${result.player2Score.correct}/${result.player2Score.total}</div>
+      <div class="result-percentage">${result.player2Score.percentage}%</div>
+    </div>
+  `;
+
+  content.innerHTML = html;
+}
+
+// Initialize results screen event handlers
+export function initResultsScreen(onPlayAgain) {
+  document.getElementById('btn-play-again').addEventListener('click', onPlayAgain);
+}
