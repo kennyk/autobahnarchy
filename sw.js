@@ -1,4 +1,4 @@
-const CACHE_NAME = 'autobahnarchy-v1';
+const CACHE_NAME = 'autobahnarchy-v2';
 const ASSETS = [
   '/',
   '/index.html',
@@ -8,7 +8,9 @@ const ASSETS = [
   '/js/quiz.js',
   '/data/rules.json',
   '/data/quiz.json',
-  '/manifest.json'
+  '/manifest.json',
+  '/assets/ui/icon-192.png',
+  '/assets/ui/icon-512.png'
 ];
 
 // Install event - cache assets

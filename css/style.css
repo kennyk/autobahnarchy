@@ -346,3 +346,32 @@ body {
   margin-bottom: 8px;
   color: var(--border);
 }
+
+/* Responsive adjustments */
+@media (max-width: 360px) {
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    font-size: 0.6rem;
+    padding: 12px 20px;
+  }
+
+  .rule-explanation,
+  .quiz-question {
+    font-size: 0.5rem;
+  }
+}
+
+/* Prevent text selection and callouts on mobile */
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Safe area padding for notched phones */
+#game-container {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
