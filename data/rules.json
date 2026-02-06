@@ -1,0 +1,37 @@
+[
+  {
+    "id": "sign-001",
+    "type": "sign",
+    "image": "assets/signs/priority-road.png",
+    "title": "Priority Road",
+    "explanation": "This yellow diamond means you have right-of-way at all intersections ahead until cancelled by another sign."
+  },
+  {
+    "id": "sign-002",
+    "type": "sign",
+    "image": "assets/signs/end-priority.png",
+    "title": "End of Priority Road",
+    "explanation": "The crossed-out yellow diamond means you no longer have automatic priority. You must now follow normal right-of-way rules."
+  },
+  {
+    "id": "verbal-001",
+    "type": "verbal",
+    "title": "Right Before Left (Rechts vor Links)",
+    "explanation": "At intersections without signs or signals, you must yield to vehicles approaching from your RIGHT. This is the opposite of some US practices.",
+    "image": null
+  },
+  {
+    "id": "sign-003",
+    "type": "sign",
+    "image": "assets/signs/town-entry.png",
+    "title": "Town Entry Sign",
+    "explanation": "Yellow sign with town name means you're entering a built-up area. Speed limit drops to 50 km/h (31 mph) unless otherwise posted."
+  },
+  {
+    "id": "sign-004",
+    "type": "sign",
+    "image": "assets/signs/autobahn.png",
+    "title": "Autobahn",
+    "explanation": "Blue sign with white highway symbol indicates Autobahn entry. No mandatory speed limit exists, but 130 km/h (80 mph) is recommended."
+  }
+]
