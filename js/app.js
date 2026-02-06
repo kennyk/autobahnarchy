@@ -1,4 +1,4 @@
-import { showScreen, initTitleScreen } from './screens.js';
+import { showScreen, initTitleScreen, initStudyScreen, renderRule } from './screens.js';
 
 // Game state
 const state = {
@@ -14,19 +14,50 @@ const state = {
   selectedQuizQuestions: []
 };
 
+// Load JSON data
+async function loadData() {
+  try {
+    const [rulesRes, quizRes] = await Promise.all([
+      fetch('/data/rules.json'),
+      fetch('/data/quiz.json')
+    ]);
+    state.rules = await rulesRes.json();
+    state.quizQuestions = await quizRes.json();
+    console.log(`Loaded ${state.rules.length} rules and ${state.quizQuestions.length} questions`);
+  } catch (error) {
+    console.error('Failed to load data:', error);
+  }
+}
+
 // Handle player count selection
 function handlePlayerSelect(count) {
   state.playerCount = count;
+  state.currentRuleIndex = 0;
   console.log(`Selected ${count} player(s)`);
-  // TODO: transition to study screen
+  renderRule(state.rules[0], 0, state.rules.length);
   showScreen('study');
+}
+
+// Handle next rule button
+function handleNextRule() {
+  state.currentRuleIndex = (state.currentRuleIndex + 1) % state.rules.length;
+  renderRule(state.rules[state.currentRuleIndex], state.currentRuleIndex, state.rules.length);
+}
+
+// Handle start quiz button
+function handleStartQuiz() {
+  console.log('Starting quiz...');
+  // TODO: implement quiz
+  showScreen('quiz');
 }
 
 // Initialize app
 async function init() {
   console.log('Autobahnarchy initializing...');
   registerServiceWorker();
+  await loadData();
   initTitleScreen(handlePlayerSelect);
+  initStudyScreen(handleNextRule, handleStartQuiz);
   showScreen('title');
 }
 
