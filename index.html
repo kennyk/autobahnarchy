@@ -39,7 +39,19 @@
     </div>
 
     <!-- Quiz Screen -->
-    <div id="screen-quiz" class="screen"></div>
+    <div id="screen-quiz" class="screen">
+      <div class="quiz-header">
+        <span id="quiz-player" class="quiz-player">MASHA</span>
+        <span id="quiz-progress">Q1/10</span>
+      </div>
+      <div class="quiz-card">
+        <img id="quiz-image" class="quiz-image" src="" alt="">
+        <p id="quiz-question" class="quiz-question"></p>
+        <div id="quiz-answers" class="quiz-answers"></div>
+      </div>
+      <button id="btn-submit-answer" class="btn btn-accent" disabled>SUBMIT</button>
+      <div id="quiz-feedback" class="quiz-feedback hidden"></div>
+    </div>
 
     <!-- Results Screen -->
     <div id="screen-results" class="screen"></div>

@@ -153,3 +153,122 @@ body {
   background-color: var(--text-light);
   border-color: var(--text-light);
 }
+
+/* Quiz Screen */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 20px;
+  font-size: 0.6rem;
+}
+
+.quiz-player {
+  color: var(--accent);
+}
+
+.quiz-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 4px solid var(--border);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.quiz-image {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 15px;
+  display: block;
+  image-rendering: pixelated;
+  background-color: var(--border);
+}
+
+.quiz-image[src=""],
+.quiz-image:not([src]),
+.quiz-image.hidden {
+  display: none;
+}
+
+.quiz-question {
+  font-size: 0.6rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.quiz-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.answer-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.5rem;
+  background-color: transparent;
+  color: var(--text-light);
+  border: 2px solid var(--border);
+  padding: 12px;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.4;
+  transition: none;
+}
+
+.answer-btn:hover {
+  border-color: var(--text-light);
+}
+
+.answer-btn.selected {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+  border-color: var(--accent);
+}
+
+.answer-btn.correct {
+  background-color: var(--correct);
+  border-color: var(--correct);
+  color: var(--bg-dark);
+}
+
+.answer-btn.incorrect {
+  background-color: var(--incorrect);
+  border-color: var(--incorrect);
+  color: var(--text-light);
+}
+
+.quiz-feedback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.quiz-feedback.hidden {
+  display: none;
+}
+
+.quiz-feedback.correct {
+  background-color: rgba(56, 183, 100, 0.3);
+  color: var(--correct);
+}
+
+.quiz-feedback.incorrect {
+  background-color: rgba(177, 62, 83, 0.3);
+  color: var(--incorrect);
+}
+
+#btn-submit-answer:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

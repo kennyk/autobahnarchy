@@ -1,4 +1,5 @@
-import { showScreen, initTitleScreen, initStudyScreen, renderRule } from './screens.js';
+import { showScreen, initTitleScreen, initStudyScreen, initQuizScreen, renderRule, renderQuestion, updateAnswerSelection, showAnswerFeedback, hideFeedback } from './screens.js';
+import { selectQuestions, checkAnswer, calculateScore, determineWinner, generateSeed } from './quiz.js';
 
 // Game state
 const state = {
@@ -11,8 +12,12 @@ const state = {
   currentPlayer: 1,
   player1Answers: [],
   player2Answers: [],
-  selectedQuizQuestions: []
+  selectedQuizQuestions: [],
+  selectedAnswerIndices: [],
+  quizSeed: 0
 };
+
+const QUESTIONS_PER_QUIZ = 10;
 
 // Load JSON data
 async function loadData() {
@@ -46,9 +51,117 @@ function handleNextRule() {
 
 // Handle start quiz button
 function handleStartQuiz() {
-  console.log('Starting quiz...');
-  // TODO: implement quiz
+  // Reset quiz state
+  state.currentPlayer = 1;
+  state.player1Answers = [];
+  state.player2Answers = [];
+  state.currentQuestionIndex = 0;
+  state.selectedAnswerIndices = [];
+  state.quizSeed = generateSeed();
+
+  // Select questions (same for both players via seed)
+  state.selectedQuizQuestions = selectQuestions(
+    state.quizQuestions,
+    Math.min(QUESTIONS_PER_QUIZ, state.quizQuestions.length),
+    state.quizSeed
+  );
+
+  console.log(`Starting quiz with ${state.selectedQuizQuestions.length} questions`);
+
+  // Show first question
+  const playerName = state.currentPlayer === 1 ? 'Masha' : 'Bobby';
+  renderQuestion(
+    state.selectedQuizQuestions[0],
+    0,
+    state.selectedQuizQuestions.length,
+    playerName,
+    handleAnswerSelect
+  );
   showScreen('quiz');
+}
+
+// Handle answer selection
+function handleAnswerSelect(index, multiSelect) {
+  if (multiSelect) {
+    // Toggle selection
+    const idx = state.selectedAnswerIndices.indexOf(index);
+    if (idx === -1) {
+      state.selectedAnswerIndices.push(index);
+    } else {
+      state.selectedAnswerIndices.splice(idx, 1);
+    }
+  } else {
+    // Single select
+    state.selectedAnswerIndices = [index];
+  }
+  updateAnswerSelection(state.selectedAnswerIndices, multiSelect);
+}
+
+// Handle submit answer
+function handleSubmitAnswer() {
+  const question = state.selectedQuizQuestions[state.currentQuestionIndex];
+  const isCorrect = checkAnswer(question, state.selectedAnswerIndices);
+
+  // Record answer
+  const answer = {
+    questionId: question.id,
+    selectedIndices: [...state.selectedAnswerIndices],
+    correct: isCorrect
+  };
+
+  if (state.currentPlayer === 1) {
+    state.player1Answers.push(answer);
+  } else {
+    state.player2Answers.push(answer);
+  }
+
+  // Show feedback
+  showAnswerFeedback(question, state.selectedAnswerIndices, isCorrect);
+
+  // After delay, move to next question or end quiz
+  setTimeout(() => {
+    hideFeedback();
+    state.selectedAnswerIndices = [];
+    state.currentQuestionIndex++;
+
+    if (state.currentQuestionIndex >= state.selectedQuizQuestions.length) {
+      // End of quiz for current player
+      if (state.playerCount === 2 && state.currentPlayer === 1) {
+        // Switch to player 2
+        state.currentPlayer = 2;
+        state.currentQuestionIndex = 0;
+        alert("MASHA'S TURN COMPLETE!\n\nPass the device to BOBBY.");
+        const playerName = 'Bobby';
+        renderQuestion(
+          state.selectedQuizQuestions[0],
+          0,
+          state.selectedQuizQuestions.length,
+          playerName,
+          handleAnswerSelect
+        );
+      } else {
+        // Show results
+        showResults();
+      }
+    } else {
+      // Next question
+      const playerName = state.currentPlayer === 1 ? 'Masha' : 'Bobby';
+      renderQuestion(
+        state.selectedQuizQuestions[state.currentQuestionIndex],
+        state.currentQuestionIndex,
+        state.selectedQuizQuestions.length,
+        playerName,
+        handleAnswerSelect
+      );
+    }
+  }, 1500);
+}
+
+// Show results screen
+function showResults() {
+  console.log('Quiz complete, showing results');
+  // TODO: implement results screen
+  showScreen('results');
 }
 
 // Initialize app
@@ -58,6 +171,7 @@ async function init() {
   await loadData();
   initTitleScreen(handlePlayerSelect);
   initStudyScreen(handleNextRule, handleStartQuiz);
+  initQuizScreen(handleSubmitAnswer);
   showScreen('title');
 }
 
