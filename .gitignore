@@ -7,3 +7,7 @@
 
 # Node
 node_modules/
+
+# Intellij stuff
+.idea
+autobahnarchy.iml
