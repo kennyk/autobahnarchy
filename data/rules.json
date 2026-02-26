@@ -2,14 +2,14 @@
   {
     "id": "sign-001",
     "type": "sign",
-    "image": "assets/signs/priority-road.png",
+    "image": "assets/signs/Zeichen_306_-_Vorfahrtstraße,_StVO_1970.png",
     "title": "Priority Road",
     "explanation": "This yellow diamond means you have right-of-way at all intersections ahead until cancelled by another sign."
   },
   {
     "id": "sign-002",
     "type": "sign",
-    "image": "assets/signs/end-priority.png",
+    "image": null,
     "title": "End of Priority Road",
     "explanation": "The crossed-out yellow diamond means you no longer have automatic priority. You must now follow normal right-of-way rules."
   },
@@ -23,15 +23,155 @@
   {
     "id": "sign-003",
     "type": "sign",
-    "image": "assets/signs/town-entry.png",
+    "image": null,
     "title": "Town Entry Sign",
     "explanation": "Yellow sign with town name means you're entering a built-up area. Speed limit drops to 50 km/h (31 mph) unless otherwise posted."
   },
   {
     "id": "sign-004",
     "type": "sign",
-    "image": "assets/signs/autobahn.png",
+    "image": "assets/signs/Zeichen_330.1_-_Autobahn,_StVO_2013.png",
     "title": "Autobahn",
     "explanation": "Blue sign with white highway symbol indicates Autobahn entry. No mandatory speed limit exists, but 130 km/h (80 mph) is recommended."
+  },
+  {
+    "id": "sign-005",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_208_-_Dem_Gegenverkehr_Vorrang_gewähren!_600x600,_StVO_1992.png",
+    "title": "Yield to Oncoming Traffic (Gegenverkehr Vorrang gewähren)",
+    "explanation": "Round sign with a large red down-arrow and small black up-arrow. You must yield to oncoming traffic at narrow passages where both directions cannot pass simultaneously."
+  },
+  {
+    "id": "sign-006",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_209-30_-_Vorgeschriebene_Fahrtrichtung,_Geradeaus,_StVO_2017.png",
+    "title": "Mandatory Direction: Straight Ahead (Vorgeschriebene Fahrtrichtung geradeaus)",
+    "explanation": "Round blue sign with a white upward arrow. You must continue straight ahead at the next intersection. Turning left or right is not permitted."
+  },
+  {
+    "id": "sign-007",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_209_-_Vorgeschriebene_Fahrtrichtung,_rechts,_StVO_2017.png",
+    "title": "Mandatory Direction: Turn Right (Vorgeschriebene Fahrtrichtung rechts)",
+    "explanation": "Round blue sign with a white right-pointing arrow. You must turn right at the next intersection. Continuing straight or turning left is not permitted."
+  },
+  {
+    "id": "sign-008",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_220-10_-_Einbahnstraße,_linksweisend,_StVO_2017.png",
+    "title": "One-Way Street (Einbahnstraße)",
+    "explanation": "Blue rectangular sign with a white horizontal arrow. Indicates a one-way street where all traffic flows in the direction of the arrow."
+  },
+  {
+    "id": "sign-009",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_250_-_Verbot_für_Fahrzeuge_aller_Art,_StVO_1970.png",
+    "title": "No Vehicles of Any Kind (Verbot für Fahrzeuge aller Art)",
+    "explanation": "Round white sign with a red border and no symbol inside. No vehicles of any kind may enter, including bicycles. Pedestrians are usually still permitted."
+  },
+  {
+    "id": "sign-010",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_251_-_Verbot_für_Kraftwagen_und_sonstige_mehrspurige_Kraftfahrzeuge,_StVO_1992.png",
+    "title": "No Motor Vehicles (Verbot für Kraftwagen)",
+    "explanation": "Round white sign with red border showing a black car silhouette. Multi-track motor vehicles (cars, trucks) are prohibited. Motorcycles, bicycles, and pedestrians may still pass."
+  },
+  {
+    "id": "sign-011",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_267_-_Verbot_der_Einfahrt,_StVO_1970.png",
+    "title": "No Entry (Verbot der Einfahrt)",
+    "explanation": "Round red sign with a white horizontal bar. Entry is forbidden for all vehicles from this direction. Commonly found at the exit end of one-way streets."
+  },
+  {
+    "id": "sign-012",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_274-60_-_Zulässige_Höchstgeschwindigkeit,_StVO_2017.png",
+    "title": "Speed Limit 60 km/h (Zulässige Höchstgeschwindigkeit)",
+    "explanation": "Round white sign with red border showing '60'. Maximum permitted speed is 60 km/h. This limit applies until cancelled by an end-of-speed-limit sign or a new speed limit."
+  },
+  {
+    "id": "sign-013",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_275-30_-_Vorgeschriebene_Mindestgeschwindigkeit,_StVO_2017.png",
+    "title": "Minimum Speed 30 km/h (Vorgeschriebene Mindestgeschwindigkeit)",
+    "explanation": "Round blue sign with white '30'. You must maintain at least 30 km/h. Vehicles unable to reach this speed are not permitted on this road."
+  },
+  {
+    "id": "sign-014",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_276_-_Überholverbot_für_Kraftfahrzeuge_aller_Art,_StVO_1992.png",
+    "title": "No Overtaking (Überholverbot)",
+    "explanation": "Round white sign with red border showing a red car alongside a black car. Overtaking (passing) other motor vehicles is prohibited until the restriction is lifted."
+  },
+  {
+    "id": "sign-015",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_278-60_-_Ende_der_zulässigen_Höchstgeschwindigkeit,_StVO_2017.png",
+    "title": "End of Speed Limit 60 km/h (Ende der Höchstgeschwindigkeit)",
+    "explanation": "Round white sign with grey '60' crossed by diagonal black lines. The 60 km/h speed limit is lifted. The default speed limit for the road type now applies (50 km/h in towns, 100 km/h outside)."
+  },
+  {
+    "id": "sign-016",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_282_-_Ende_sämtlicher_Streckenverbote,_StVO_1970.png",
+    "title": "End of All Restrictions (Ende sämtlicher Streckenverbote)",
+    "explanation": "Round white sign crossed by diagonal black lines with no number. All previously posted restrictions (speed limits, no-overtaking zones, etc.) are cancelled at once."
+  },
+  {
+    "id": "sign-017",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_283_-_Absolutes_Haltverbot,_StVO_2017.png",
+    "title": "No Stopping (Absolutes Haltverbot)",
+    "explanation": "Round blue sign with red border and a red X. Absolutely no stopping at any time, not even briefly for loading or dropping off passengers."
+  },
+  {
+    "id": "sign-018",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_286_-_Eingeschränktes_Halteverbot,_StVO_1970.png",
+    "title": "No Parking (Eingeschränktes Halteverbot)",
+    "explanation": "Round blue sign with red border and a single red diagonal line. Stopping briefly (up to 3 minutes) for loading/unloading or picking up passengers is allowed, but parking longer is not."
+  },
+  {
+    "id": "sign-019",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_333_-_Pfeilschild_-_Ausfahrt_von_der_Autobahn,_StVO_1980.png",
+    "title": "Autobahn Exit (Ausfahrt)",
+    "explanation": "Blue arrow-shaped sign reading 'Ausfahrt' (exit). Marks the deceleration lane for an Autobahn exit. Begin reducing speed only after entering the exit lane, not while still on the main carriageway."
+  },
+  {
+    "id": "sign-020",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_515-11_-_Verschwenkungstafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_264_StVO_-_zweistreifig_nach_links_(1600x1250).png",
+    "title": "Lane Shift Panel (Verschwenkungstafel)",
+    "explanation": "Large rectangular sign showing lane arrows shifting to the left, with an integrated maximum width restriction. Warns that lanes are shifting, often due to construction. Follow the arrows and observe any embedded restriction signs."
+  },
+  {
+    "id": "sign-021",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_523-30_-_Fahrstreifentafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_274_-_zweistreifig_in_Fahrtrichtung_(1600x1250).png",
+    "title": "Lane Allocation with Speed Limit (Fahrstreifentafel mit Höchstgeschwindigkeit)",
+    "explanation": "Large rectangular sign showing available lanes with a speed limit circle on one lane. Indicates which lanes are available ahead and that the marked lane has a specific maximum speed limit."
+  },
+  {
+    "id": "sign-022",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_524-30_-_Fahrstreifentafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_253_-_zweistreifig_in_Fahrtrichtung_(1600x1250).png",
+    "title": "Lane Allocation with Truck Restriction (Fahrstreifentafel mit LKW-Verbot)",
+    "explanation": "Large rectangular sign showing available lanes with a truck prohibition symbol on one lane. Heavy goods vehicles are not permitted in the marked lane and must use the other available lane(s)."
+  },
+  {
+    "id": "sign-023",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_525-31_-_Fahrstreifentafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_275_-_dreistreifig_in_Fahrtrichtung_(1600x1250).png",
+    "title": "Lane Allocation with Minimum Speed (Fahrstreifentafel mit Mindestgeschwindigkeit)",
+    "explanation": "Large rectangular sign showing lanes with blue minimum speed circles for each lane. Each lane requires a minimum speed. Slower vehicles must use the lane with the lower minimum speed requirement."
+  },
+  {
+    "id": "sign-024",
+    "type": "sign",
+    "image": "assets/signs/Zeichen_531-11_-_Einengungstafel,_Darstellung_ohne_Gegenverkehr-_noch_zwei_Fahrstreifen_links_in_Fahrtrichtung,_StVO_1992.png",
+    "title": "Lane Narrowing Panel (Einengungstafel)",
+    "explanation": "Large rectangular sign showing lane arrows converging as one lane ends. The road narrows ahead. Drivers in the ending lane must merge using the zipper merge principle (Reißverschlussverfahren) - vehicles alternate one at a time at the merge point."
   }
 ]

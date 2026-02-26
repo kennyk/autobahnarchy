@@ -3,7 +3,7 @@
     "id": "q-001",
     "relatedRuleId": "sign-001",
     "questionType": "sign",
-    "image": "assets/signs/priority-road.png",
+    "image": "assets/signs/Zeichen_306_-_Vorfahrtstraße,_StVO_1970.png",
     "questionText": "What does this yellow diamond sign mean?",
     "answers": [
       { "text": "You have priority at upcoming intersections", "correct": true },
@@ -17,7 +17,7 @@
     "id": "q-002",
     "relatedRuleId": "sign-002",
     "questionType": "sign",
-    "image": "assets/signs/end-priority.png",
+    "image": null,
     "questionText": "What does the crossed-out yellow diamond mean?",
     "answers": [
       { "text": "End of priority road - follow normal rules", "correct": true },
@@ -45,7 +45,7 @@
     "id": "q-004",
     "relatedRuleId": "sign-003",
     "questionType": "sign",
-    "image": "assets/signs/town-entry.png",
+    "image": null,
     "questionText": "What happens when you see a yellow town name sign?",
     "answers": [
       { "text": "Speed limit becomes 50 km/h unless posted otherwise", "correct": true },
@@ -66,6 +66,286 @@
       { "text": "120 km/h at all times", "correct": false },
       { "text": "No limit whatsoever, no recommendations", "correct": false },
       { "text": "None of the above", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-006",
+    "relatedRuleId": "sign-005",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_208_-_Dem_Gegenverkehr_Vorrang_gewähren!_600x600,_StVO_1992.png",
+    "questionText": "What does this sign with a large red arrow pointing down and a small black arrow pointing up mean?",
+    "answers": [
+      { "text": "You must yield to oncoming traffic at a narrow passage", "correct": true },
+      { "text": "Oncoming traffic must yield to you", "correct": false },
+      { "text": "Two-way traffic ahead", "correct": false },
+      { "text": "One-way street ends ahead", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-007",
+    "relatedRuleId": "sign-006",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_209-30_-_Vorgeschriebene_Fahrtrichtung,_Geradeaus,_StVO_2017.png",
+    "questionText": "What does this round blue sign with a white upward arrow require?",
+    "answers": [
+      { "text": "You must continue straight ahead", "correct": true },
+      { "text": "One-way street ahead", "correct": false },
+      { "text": "Recommended direction only", "correct": false },
+      { "text": "Pedestrian zone ahead", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-008",
+    "relatedRuleId": "sign-007",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_209_-_Vorgeschriebene_Fahrtrichtung,_rechts,_StVO_2017.png",
+    "questionText": "What must you do when you see this round blue sign with a white right arrow?",
+    "answers": [
+      { "text": "Turn right at the next intersection", "correct": true },
+      { "text": "Yield to traffic from the right", "correct": false },
+      { "text": "Right lane only", "correct": false },
+      { "text": "Recommended detour to the right", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-009",
+    "relatedRuleId": "sign-008",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_220-10_-_Einbahnstraße,_linksweisend,_StVO_2017.png",
+    "questionText": "What does this blue rectangular sign with a white horizontal arrow indicate?",
+    "answers": [
+      { "text": "One-way street in the arrow's direction", "correct": true },
+      { "text": "Mandatory left turn", "correct": false },
+      { "text": "Keep left of obstacle", "correct": false },
+      { "text": "Highway exit to the left", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-010",
+    "relatedRuleId": "sign-009",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_250_-_Verbot_für_Fahrzeuge_aller_Art,_StVO_1970.png",
+    "questionText": "What does a round white sign with only a red border (no symbol inside) mean?",
+    "answers": [
+      { "text": "No vehicles of any kind may enter", "correct": true },
+      { "text": "Speed limit zone begins", "correct": false },
+      { "text": "End of all restrictions", "correct": false },
+      { "text": "No pedestrians allowed", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-011",
+    "relatedRuleId": "sign-010",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_251_-_Verbot_für_Kraftwagen_und_sonstige_mehrspurige_Kraftfahrzeuge,_StVO_1992.png",
+    "questionText": "This round sign shows a black car silhouette with a red border. What does it mean?",
+    "answers": [
+      { "text": "Multi-track motor vehicles (cars, trucks) are prohibited", "correct": true },
+      { "text": "All vehicles including bicycles are prohibited", "correct": false },
+      { "text": "Cars-only lane", "correct": false },
+      { "text": "No parking for cars", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-012",
+    "relatedRuleId": "sign-011",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_267_-_Verbot_der_Einfahrt,_StVO_1970.png",
+    "questionText": "What does this round red sign with a white horizontal bar mean?",
+    "answers": [
+      { "text": "No entry for any vehicle from this direction", "correct": true },
+      { "text": "No passing zone", "correct": false },
+      { "text": "Railroad crossing ahead", "correct": false },
+      { "text": "Dead end ahead", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-013",
+    "relatedRuleId": "sign-012",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_274-60_-_Zulässige_Höchstgeschwindigkeit,_StVO_2017.png",
+    "questionText": "A round sign with red border shows the number 60. What does it mean?",
+    "answers": [
+      { "text": "Maximum speed is 60 km/h", "correct": true },
+      { "text": "Minimum speed is 60 km/h", "correct": false },
+      { "text": "Recommended speed is 60 km/h", "correct": false },
+      { "text": "Distance to next town is 60 km", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-014",
+    "relatedRuleId": "sign-013",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_275-30_-_Vorgeschriebene_Mindestgeschwindigkeit,_StVO_2017.png",
+    "questionText": "What does a round blue sign with a white '30' indicate?",
+    "answers": [
+      { "text": "Minimum speed of 30 km/h is required", "correct": true },
+      { "text": "Maximum speed of 30 km/h", "correct": false },
+      { "text": "Recommended speed is 30 km/h", "correct": false },
+      { "text": "Zone 30 residential area", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-015",
+    "relatedRuleId": "sign-014",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_276_-_Überholverbot_für_Kraftfahrzeuge_aller_Art,_StVO_1992.png",
+    "questionText": "What does this sign with two cars (one red, one black) side by side prohibit?",
+    "answers": [
+      { "text": "Overtaking (passing) other motor vehicles", "correct": true },
+      { "text": "Driving side by side in two lanes", "correct": false },
+      { "text": "Entering a highway", "correct": false },
+      { "text": "Parking on both sides of the road", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-016",
+    "relatedRuleId": "sign-015",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_278-60_-_Ende_der_zulässigen_Höchstgeschwindigkeit,_StVO_2017.png",
+    "questionText": "A sign shows a grey '60' crossed out with diagonal black lines. What does it mean?",
+    "answers": [
+      { "text": "The 60 km/h speed limit has ended", "correct": true },
+      { "text": "Speed limit is now reduced to 60 km/h", "correct": false },
+      { "text": "Minimum speed is now 60 km/h", "correct": false },
+      { "text": "Recommended speed is 60 km/h", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-017",
+    "relatedRuleId": "sign-016",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_282_-_Ende_sämtlicher_Streckenverbote,_StVO_1970.png",
+    "questionText": "What does a round white sign with only diagonal black lines (no number) indicate?",
+    "answers": [
+      { "text": "End of all previously posted restrictions", "correct": true },
+      { "text": "No entry from this direction", "correct": false },
+      { "text": "End of Autobahn", "correct": false },
+      { "text": "Road closed ahead", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-018",
+    "relatedRuleId": "sign-017",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_283_-_Absolutes_Haltverbot,_StVO_2017.png",
+    "questionText": "A round blue sign has a red X across it. What is prohibited?",
+    "answers": [
+      { "text": "Stopping of any kind, even briefly", "correct": true },
+      { "text": "Parking for more than 3 minutes", "correct": false },
+      { "text": "Loading and unloading goods", "correct": false },
+      { "text": "Making left turns", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-019",
+    "relatedRuleId": "sign-018",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_286_-_Eingeschränktes_Halteverbot,_StVO_1970.png",
+    "questionText": "How does the no-parking sign (single red diagonal on blue) differ from the no-stopping sign (red X on blue)?",
+    "answers": [
+      { "text": "No-parking allows brief stops up to 3 minutes; no-stopping forbids all stopping", "correct": true },
+      { "text": "They mean the same thing", "correct": false },
+      { "text": "No-parking applies only to trucks", "correct": false },
+      { "text": "No-stopping allows loading and unloading", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-020",
+    "relatedRuleId": "sign-019",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_333_-_Pfeilschild_-_Ausfahrt_von_der_Autobahn,_StVO_1980.png",
+    "questionText": "What does the blue arrow sign reading 'Ausfahrt' indicate?",
+    "answers": [
+      { "text": "An Autobahn exit - begin slowing in the exit lane", "correct": true },
+      { "text": "Autobahn entrance ramp", "correct": false },
+      { "text": "Rest area ahead", "correct": false },
+      { "text": "Lane merge ahead", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-021",
+    "relatedRuleId": "sign-020",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_515-11_-_Verschwenkungstafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_264_StVO_-_zweistreifig_nach_links_(1600x1250).png",
+    "questionText": "What does a large rectangular sign with arrows showing lanes shifting to one side indicate?",
+    "answers": [
+      { "text": "Lanes are shifting direction, often due to construction ahead", "correct": true },
+      { "text": "New lanes are being added to the road", "correct": false },
+      { "text": "Highway interchange ahead", "correct": false },
+      { "text": "Exit-only lane on the right", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-022",
+    "relatedRuleId": "sign-021",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_523-30_-_Fahrstreifentafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_274_-_zweistreifig_in_Fahrtrichtung_(1600x1250).png",
+    "questionText": "A lane allocation sign shows lane arrows with a speed limit circle (e.g. 80) on one lane. What does it mean?",
+    "answers": [
+      { "text": "The indicated lane has a specific maximum speed limit", "correct": true },
+      { "text": "All lanes share the same speed limit", "correct": false },
+      { "text": "You must speed up to that speed to merge", "correct": false },
+      { "text": "The road narrows to that many meters wide", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-023",
+    "relatedRuleId": "sign-022",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_524-30_-_Fahrstreifentafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_253_-_zweistreifig_in_Fahrtrichtung_(1600x1250).png",
+    "questionText": "A lane allocation sign has a truck symbol crossed out on one lane. What does this mean?",
+    "answers": [
+      { "text": "Trucks and heavy vehicles are prohibited from that lane", "correct": true },
+      { "text": "Only trucks may use that lane", "correct": false },
+      { "text": "Truck stop or rest area ahead", "correct": false },
+      { "text": "All vehicles must exit via the other lane", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-024",
+    "relatedRuleId": "sign-023",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_525-31_-_Fahrstreifentafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_275_-_dreistreifig_in_Fahrtrichtung_(1600x1250).png",
+    "questionText": "A lane sign shows minimum speeds of 80 km/h and 50 km/h for different lanes. What should a vehicle traveling at 60 km/h do?",
+    "answers": [
+      { "text": "Use the lane with the 50 km/h minimum speed", "correct": true },
+      { "text": "Use the lane with the 80 km/h minimum speed", "correct": false },
+      { "text": "This vehicle cannot use the road at all", "correct": false },
+      { "text": "Choose any lane freely", "correct": false }
+    ],
+    "multiSelect": false
+  },
+  {
+    "id": "q-025",
+    "relatedRuleId": "sign-024",
+    "questionType": "sign",
+    "image": "assets/signs/Zeichen_531-11_-_Einengungstafel,_Darstellung_ohne_Gegenverkehr-_noch_zwei_Fahrstreifen_links_in_Fahrtrichtung,_StVO_1992.png",
+    "questionText": "A sign shows lanes converging with one lane ending. What merging rule applies in Germany?",
+    "answers": [
+      { "text": "Zipper merge (Reißverschlussverfahren) - alternate one vehicle at a time", "correct": true },
+      { "text": "The vehicle behind always yields", "correct": false },
+      { "text": "The faster vehicle goes first", "correct": false },
+      { "text": "Merge as early as possible, not at the merge point", "correct": false }
     ],
     "multiSelect": false
   }
