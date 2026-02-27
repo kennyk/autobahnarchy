@@ -31,7 +31,7 @@
     "id": "q-004",
     "relatedRuleId": "sign-003",
     "questionType": "sign",
-    "image": null,
+    "image": "assets/signs/town-entry.png",
     "questionText": "What happens when you see a yellow town name sign?",
     "answers": [
       { "text": "Speed limit becomes 50 km/h unless posted otherwise", "correct": true },
@@ -348,5 +348,19 @@
       { "text": "Anytime on the Autobahn if you are going faster", "correct": false }
     ],
     "multiSelect": true
+  },
+  {
+    "id": "q-027",
+    "relatedRuleId": "sign-025",
+    "questionType": "sign",
+    "image": "assets/signs/town-exit.png",
+    "questionText": "What happens when you see a town name sign with a red diagonal line through it?",
+    "answers": [
+      { "text": "Speed limit increases to 100 km/h unless otherwise posted", "correct": true },
+      { "text": "Speed limit stays at 50 km/h", "correct": false },
+      { "text": "There is no longer any speed limit", "correct": false },
+      { "text": "None of the above", "correct": false }
+    ],
+    "multiSelect": false
   }
 ]

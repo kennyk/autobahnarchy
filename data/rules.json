@@ -16,7 +16,7 @@
   {
     "id": "sign-003",
     "type": "sign",
-    "image": null,
+    "image": "assets/signs/town-entry.png",
     "title": "Town Entry Sign",
     "explanation": "Yellow sign with town name means you're entering a built-up area. Speed limit drops to 50 km/h (31 mph) unless otherwise posted."
   },
@@ -173,5 +173,12 @@
     "title": "Passing on the Right",
     "explanation": "Passing on the right is generally prohibited in Germany. It is allowed in built-up areas when there are multiple marked lanes in your direction, when the vehicle ahead is turning left, or when traffic is queued in lanes and the left lane is moving slower (you may pass up to 20 km/h faster).",
     "image": null
+  },
+  {
+    "id": "sign-025",
+    "type": "sign",
+    "image": "assets/signs/town-exit.png",
+    "title": "Town Exit Sign",
+    "explanation": "You are leaving a built-up area. The default speed limit increases to 100 km/h (62 mph) on regular roads unless otherwise posted."
   }
 ]
