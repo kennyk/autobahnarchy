@@ -14,20 +14,6 @@
     "multiSelect": false
   },
   {
-    "id": "q-002",
-    "relatedRuleId": "sign-002",
-    "questionType": "sign",
-    "image": null,
-    "questionText": "What does the crossed-out yellow diamond mean?",
-    "answers": [
-      { "text": "End of priority road - follow normal rules", "correct": true },
-      { "text": "No parking zone begins", "correct": false },
-      { "text": "End of speed limit", "correct": false },
-      { "text": "None of the above", "correct": false }
-    ],
-    "multiSelect": false
-  },
-  {
     "id": "q-003",
     "relatedRuleId": "verbal-001",
     "questionType": "verbal",
@@ -348,5 +334,19 @@
       { "text": "Merge as early as possible, not at the merge point", "correct": false }
     ],
     "multiSelect": false
+  },
+  {
+    "id": "q-026",
+    "relatedRuleId": "verbal-002",
+    "questionType": "verbal",
+    "image": null,
+    "questionText": "When is it OK to pass on the right?",
+    "answers": [
+      { "text": "In built-up areas with multiple marked lanes in your direction", "correct": true },
+      { "text": "When the vehicle ahead is signaling and turning left", "correct": true },
+      { "text": "When traffic is queued in lanes and the left lane is slower (up to 20 km/h faster)", "correct": true },
+      { "text": "Anytime on the Autobahn if you are going faster", "correct": false }
+    ],
+    "multiSelect": true
   }
 ]

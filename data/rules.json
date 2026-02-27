@@ -7,13 +7,6 @@
     "explanation": "You have right-of-way at all intersections ahead until cancelled by another sign."
   },
   {
-    "id": "sign-002",
-    "type": "sign",
-    "image": null,
-    "title": "End of Priority Road",
-    "explanation": "The crossed-out yellow diamond means you no longer have automatic priority. You must now follow normal right-of-way rules."
-  },
-  {
     "id": "verbal-001",
     "type": "verbal",
     "title": "Right Before Left",
@@ -173,5 +166,12 @@
     "image": "assets/signs/Zeichen_531-11_-_Einengungstafel,_Darstellung_ohne_Gegenverkehr-_noch_zwei_Fahrstreifen_links_in_Fahrtrichtung,_StVO_1992.png",
     "title": "Lane Narrowing Panel",
     "explanation": "The road narrows ahead. Drivers in the ending lane must merge using the zipper merge principle - vehicles alternate one at a time at the merge point."
+  },
+  {
+    "id": "verbal-002",
+    "type": "verbal",
+    "title": "Passing on the Right",
+    "explanation": "Passing on the right is generally prohibited in Germany. It is allowed in built-up areas when there are multiple marked lanes in your direction, when the vehicle ahead is turning left, or when traffic is queued in lanes and the left lane is moving slower (you may pass up to 20 km/h faster).",
+    "image": null
   }
 ]
