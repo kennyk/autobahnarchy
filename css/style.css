@@ -110,12 +110,11 @@ body {
 }
 
 .rule-image {
-  width: 80px;
-  height: 80px;
+  max-width: 100%;
+  height: auto;
   margin: 0 auto 20px;
   display: block;
   image-rendering: pixelated;
-  background-color: var(--border);
 }
 
 .rule-image[src=""],
@@ -178,12 +177,11 @@ body {
 }
 
 .quiz-image {
-  width: 64px;
-  height: 64px;
+  max-width: 100%;
+  height: auto;
   margin: 0 auto 15px;
   display: block;
   image-rendering: pixelated;
-  background-color: var(--border);
 }
 
 .quiz-image[src=""],

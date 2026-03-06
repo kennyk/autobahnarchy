@@ -23,8 +23,8 @@ const QUESTIONS_PER_QUIZ = 10;
 async function loadData() {
   try {
     const [rulesRes, quizRes] = await Promise.all([
-      fetch('/data/rules.json'),
-      fetch('/data/quiz.json')
+      fetch('./data/rules.json'),
+      fetch('./data/quiz.json')
     ]);
     state.rules = await rulesRes.json();
     state.quizQuestions = await quizRes.json();
@@ -202,7 +202,7 @@ async function init() {
 async function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     try {
-      await navigator.serviceWorker.register('/sw.js');
+      await navigator.serviceWorker.register('./sw.js');
       console.log('Service worker registered');
     } catch (error) {
       console.log('Service worker registration failed:', error);
