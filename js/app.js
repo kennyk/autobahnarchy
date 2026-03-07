@@ -190,6 +190,7 @@ function handlePlayAgain() {
 async function init() {
   console.log('Autobahnarchy initializing...');
   registerServiceWorker();
+  initInstallButton();
   await loadData();
   initTitleScreen(handlePlayerSelect);
   initStudyScreen(handleNextRule, handleStartQuiz);
@@ -197,6 +198,34 @@ async function init() {
   initResultsScreen(handlePlayAgain);
   showScreen('title');
 }
+
+// PWA install prompt
+let deferredInstallPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  const btn = document.getElementById('btn-install');
+  btn.classList.remove('hidden');
+});
+
+function initInstallButton() {
+  const btn = document.getElementById('btn-install');
+  btn.addEventListener('click', async () => {
+    if (!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    const { outcome } = await deferredInstallPrompt.userChoice;
+    console.log(`Install prompt outcome: ${outcome}`);
+    deferredInstallPrompt = null;
+    btn.classList.add('hidden');
+  });
+}
+
+window.addEventListener('appinstalled', () => {
+  deferredInstallPrompt = null;
+  document.getElementById('btn-install').classList.add('hidden');
+  console.log('App installed');
+});
 
 // Register service worker
 async function registerServiceWorker() {

@@ -54,12 +54,27 @@ body {
 }
 
 /* Title Screen */
-.title {
-  font-size: 1.5rem;
-  color: var(--accent);
-  margin-bottom: 60px;
-  text-shadow: 4px 4px 0 #000;
-  line-height: 1.4;
+#screen-title {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.title-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+#screen-title .menu {
+  position: absolute;
+  bottom: 15%;
+  z-index: 1;
 }
 
 /* Buttons */
@@ -91,6 +106,16 @@ body {
 .menu {
   display: flex;
   flex-direction: column;
+}
+
+.btn-install {
+  font-size: 0.5rem;
+  margin-top: 10px;
+  border-style: dashed;
+}
+
+.btn-install.hidden {
+  display: none;
 }
 
 /* Study Screen */
@@ -347,8 +372,8 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 360px) {
-  .title {
-    font-size: 1.2rem;
+  #screen-title .btn {
+    padding: 10px 18px;
   }
 
   .btn {
