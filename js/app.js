@@ -20,6 +20,40 @@ const state = {
 
 const QUESTIONS_PER_QUIZ = 10;
 
+const PRELOAD_ASSETS = [
+  'assets/title-screen-tall.gif',
+  'assets/study-time.png',
+  'assets/masha-run.png',
+  'assets/bobby-run.png',
+  'assets/masha-victory.gif',
+  'assets/bobby-victory.gif',
+  'assets/fonts/PressStart2P-Regular.woff2',
+  'assets/signs/Zeichen_208_-_Dem_Gegenverkehr_Vorrang_gew\u00e4hren!_600x600,_StVO_1992.png',
+  'assets/signs/Zeichen_209-30_-_Vorgeschriebene_Fahrtrichtung,_Geradeaus,_StVO_2017.png',
+  'assets/signs/Zeichen_209_-_Vorgeschriebene_Fahrtrichtung,_rechts,_StVO_2017.png',
+  'assets/signs/Zeichen_220-10_-_Einbahnstra\u00dfe,_linksweisend,_StVO_2017.png',
+  'assets/signs/Zeichen_250_-_Verbot_f\u00fcr_Fahrzeuge_aller_Art,_StVO_1970.png',
+  'assets/signs/Zeichen_251_-_Verbot_f\u00fcr_Kraftwagen_und_sonstige_mehrspurige_Kraftfahrzeuge,_StVO_1992.png',
+  'assets/signs/Zeichen_267_-_Verbot_der_Einfahrt,_StVO_1970.png',
+  'assets/signs/Zeichen_274-60_-_Zul\u00e4ssige_H\u00f6chstgeschwindigkeit,_StVO_2017.png',
+  'assets/signs/Zeichen_275-30_-_Vorgeschriebene_Mindestgeschwindigkeit,_StVO_2017.png',
+  'assets/signs/Zeichen_276_-_\u00dcberholverbot_f\u00fcr_Kraftfahrzeuge_aller_Art,_StVO_1992.png',
+  'assets/signs/Zeichen_278-60_-_Ende_der_zul\u00e4ssigen_H\u00f6chstgeschwindigkeit,_StVO_2017.png',
+  'assets/signs/Zeichen_282_-_Ende_s\u00e4mtlicher_Streckenverbote,_StVO_1970.png',
+  'assets/signs/Zeichen_283_-_Absolutes_Haltverbot,_StVO_2017.png',
+  'assets/signs/Zeichen_286_-_Eingeschr\u00e4nktes_Halteverbot,_StVO_1970.png',
+  'assets/signs/Zeichen_306_-_Vorfahrtstra\u00dfe,_StVO_1970.png',
+  'assets/signs/Zeichen_330.1_-_Autobahn,_StVO_2013.png',
+  'assets/signs/Zeichen_333_-_Pfeilschild_-_Ausfahrt_von_der_Autobahn,_StVO_1980.png',
+  'assets/signs/Zeichen_515-11_-_Verschwenkungstafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_264_StVO_-_zweistreifig_nach_links_(1600x1250).png',
+  'assets/signs/Zeichen_523-30_-_Fahrstreifentafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_274_-_zweistreifig_in_Fahrtrichtung_(1600x1250).png',
+  'assets/signs/Zeichen_524-30_-_Fahrstreifentafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_253_-_zweistreifig_in_Fahrtrichtung_(1600x1250).png',
+  'assets/signs/Zeichen_525-31_-_Fahrstreifentafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_275_-_dreistreifig_in_Fahrtrichtung_(1600x1250).png',
+  'assets/signs/Zeichen_531-11_-_Einengungstafel,_Darstellung_ohne_Gegenverkehr-_noch_zwei_Fahrstreifen_links_in_Fahrtrichtung,_StVO_1992.png',
+  'assets/signs/town-entry.png',
+  'assets/signs/town-exit.png'
+];
+
 // Load JSON data
 async function loadData() {
   try {
@@ -213,12 +247,38 @@ function handlePlayAgain() {
   showScreen('title');
 }
 
+// Preload a single asset, fully downloading it
+function preloadOne(url) {
+  if (url.match(/\.(png|gif|jpg|jpeg)$/i)) {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = img.onerror = resolve;
+      img.src = url;
+    });
+  }
+  return fetch(url).then(r => r.blob()).catch(() => {});
+}
+
+// Preload assets with progress bar
+async function preloadAssets() {
+  const fill = document.getElementById('loading-bar-fill');
+  let loaded = 0;
+  const total = PRELOAD_ASSETS.length;
+
+  await Promise.all(PRELOAD_ASSETS.map(url =>
+    preloadOne(url).finally(() => {
+      loaded++;
+      fill.style.width = `${(loaded / total) * 100}%`;
+    })
+  ));
+}
+
 // Initialize app
 async function init() {
   console.log('Autobahnarchy initializing...');
   registerServiceWorker();
   initInstallButton();
-  await loadData();
+  await Promise.all([loadData(), preloadAssets()]);
   initTitleScreen(handlePlayerSelect);
   initInstructionsScreen(handleInstructionsGo);
   initStudyScreen(handleNextRule, handleStartQuiz);

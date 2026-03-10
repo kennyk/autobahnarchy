@@ -1,4 +1,4 @@
-const CACHE_NAME = 'autobahnarchy-v13';
+const CACHE_NAME = 'autobahnarchy-v15';
 const ASSETS = [
   './',
   './index.html',
