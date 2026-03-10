@@ -86,6 +86,7 @@ function handleStartQuiz() {
 
 // Start the quiz for the current player
 function startQuizForCurrentPlayer() {
+  state.selectedAnswerIndices = [];
   const playerName = state.currentPlayer === 1 ? 'Masha' : 'Bobby';
   renderQuestion(
     state.selectedQuizQuestions[0],
