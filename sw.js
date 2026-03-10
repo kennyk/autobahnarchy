@@ -1,4 +1,4 @@
-const CACHE_NAME = 'autobahnarchy-v12';
+const CACHE_NAME = 'autobahnarchy-v13';
 const ASSETS = [
   './',
   './index.html',
@@ -41,7 +41,9 @@ const ASSETS = [
   './assets/signs/Zeichen_525-31_-_Fahrstreifentafel_-_ohne_Gegenverkehr_mit_integriertem_Zeichen_275_-_dreistreifig_in_Fahrtrichtung_(1600x1250).png',
   './assets/signs/Zeichen_531-11_-_Einengungstafel,_Darstellung_ohne_Gegenverkehr-_noch_zwei_Fahrstreifen_links_in_Fahrtrichtung,_StVO_1992.png',
   './assets/signs/town-entry.png',
-  './assets/signs/town-exit.png'
+  './assets/signs/town-exit.png',
+  './favicon.png',
+  './apple-touch-icon.png'
 ];
 
 // Install event - cache assets
