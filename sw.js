@@ -1,4 +1,4 @@
-const CACHE_NAME = 'autobahnarchy-v9';
+const CACHE_NAME = 'autobahnarchy-v11';
 const ASSETS = [
   './',
   './index.html',
@@ -12,7 +12,12 @@ const ASSETS = [
   './assets/ui/icon-192.png',
   './assets/ui/icon-512.png',
   './assets/fonts/PressStart2P-Regular.woff2',
-  './assets/title-screen-tall.png',
+  './assets/title-screen-tall.gif',
+  './assets/study-time.png',
+  './assets/masha-run.png',
+  './assets/bobby-run.png',
+  './assets/masha-victory.gif',
+  './assets/bobby-victory.gif',
   './assets/signs/Zeichen_208_-_Dem_Gegenverkehr_Vorrang_gew%C3%A4hren!_600x600,_StVO_1992.png',
   './assets/signs/Zeichen_209-30_-_Vorgeschriebene_Fahrtrichtung,_Geradeaus,_StVO_2017.png',
   './assets/signs/Zeichen_209_-_Vorgeschriebene_Fahrtrichtung,_rechts,_StVO_2017.png',

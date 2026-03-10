@@ -14,11 +14,20 @@
   <div id="game-container">
     <!-- Title Screen -->
     <div id="screen-title" class="screen active">
-      <img src="assets/title-screen-tall.png" alt="Masha and Bobby's Autobahnarchy" class="title-bg">
+      <img src="assets/title-screen-tall.gif" alt="Masha and Bobby's Autobahnarchy" class="title-bg">
       <div class="menu">
         <button class="btn" data-players="1">1 PLAYER</button>
         <button class="btn" data-players="2">2 PLAYERS</button>
         <button id="btn-install" class="btn btn-install hidden">INSTALL APP</button>
+      </div>
+    </div>
+
+    <!-- Instructions Screen -->
+    <div id="screen-instructions" class="screen">
+      <div class="interstitial-card">
+        <img src="assets/study-time.png" alt="Study Time" class="interstitial-img">
+        <p class="interstitial-text">Flip through the rules to study up. When you're ready, hit START QUIZ!</p>
+        <button id="btn-instructions-go" class="btn btn-accent">LET'S GO!</button>
       </div>
     </div>
 
@@ -49,6 +58,24 @@
       </div>
       <button id="btn-submit-answer" class="btn btn-accent" disabled>SUBMIT</button>
       <div id="quiz-feedback" class="quiz-feedback hidden"></div>
+    </div>
+
+    <!-- Handoff Screen (2-player only, content swapped per player) -->
+    <div id="screen-handoff" class="screen">
+      <div class="interstitial-card">
+        <img id="handoff-img" src="" alt="" class="interstitial-img">
+        <p id="handoff-text" class="interstitial-text"></p>
+        <button id="btn-handoff-go" class="btn btn-accent">GO!</button>
+      </div>
+    </div>
+
+    <!-- Victory Screen (2-player only, content swapped per outcome) -->
+    <div id="screen-victory" class="screen">
+      <div class="interstitial-card">
+        <img id="victory-img" src="" alt="" class="victory-img">
+        <h2 id="victory-text" class="victory-text"></h2>
+        <button id="btn-victory-summary" class="btn btn-accent">SEE SUMMARY</button>
+      </div>
     </div>
 
     <!-- Results Screen -->

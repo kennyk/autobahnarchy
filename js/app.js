@@ -1,4 +1,4 @@
-import { showScreen, initTitleScreen, initStudyScreen, initQuizScreen, initResultsScreen, renderRule, renderQuestion, updateAnswerSelection, showAnswerFeedback, hideFeedback, renderSinglePlayerResults, renderTwoPlayerResults } from './screens.js';
+import { showScreen, initTitleScreen, initInstructionsScreen, initStudyScreen, initQuizScreen, initHandoffScreen, initVictoryScreen, initResultsScreen, renderRule, renderHandoff, renderVictory, renderQuestion, updateAnswerSelection, showAnswerFeedback, hideFeedback, renderSinglePlayerResults, renderTwoPlayerResults } from './screens.js';
 import { selectQuestions, checkAnswer, calculateScore, determineWinner, generateSeed } from './quiz.js';
 
 // Game state
@@ -14,7 +14,8 @@ const state = {
   player2Answers: [],
   selectedQuizQuestions: [],
   selectedAnswerIndices: [],
-  quizSeed: 0
+  quizSeed: 0,
+  twoPlayerResult: null
 };
 
 const QUESTIONS_PER_QUIZ = 10;
@@ -39,6 +40,11 @@ function handlePlayerSelect(count) {
   state.playerCount = count;
   state.currentRuleIndex = 0;
   console.log(`Selected ${count} player(s)`);
+  showScreen('instructions');
+}
+
+// Handle instructions "Let's Go" button
+function handleInstructionsGo() {
   renderRule(state.rules[0], 0, state.rules.length);
   showScreen('study');
 }
@@ -68,7 +74,19 @@ function handleStartQuiz() {
 
   console.log(`Starting quiz with ${state.selectedQuizQuestions.length} questions`);
 
-  // Show first question
+  if (state.playerCount === 2) {
+    // Show Masha handoff screen
+    renderHandoff(1);
+    showScreen('handoff');
+  } else {
+    // 1P: go straight to quiz
+    startQuizForCurrentPlayer();
+  }
+}
+
+// Start the quiz for the current player
+function startQuizForCurrentPlayer() {
+  state.selectedAnswerIndices = [];
   const playerName = state.currentPlayer === 1 ? 'Masha' : 'Bobby';
   renderQuestion(
     state.selectedQuizQuestions[0],
@@ -78,6 +96,11 @@ function handleStartQuiz() {
     handleAnswerSelect
   );
   showScreen('quiz');
+}
+
+// Handle handoff "Go!" button
+function handleHandoffGo() {
+  startQuizForCurrentPlayer();
 }
 
 // Handle answer selection
@@ -127,20 +150,13 @@ function handleSubmitAnswer() {
     if (state.currentQuestionIndex >= state.selectedQuizQuestions.length) {
       // End of quiz for current player
       if (state.playerCount === 2 && state.currentPlayer === 1) {
-        // Switch to player 2
+        // Switch to player 2, show Bobby handoff
         state.currentPlayer = 2;
         state.currentQuestionIndex = 0;
-        alert("MASHA'S TURN COMPLETE!\n\nPass the device to BOBBY.");
-        const playerName = 'Bobby';
-        renderQuestion(
-          state.selectedQuizQuestions[0],
-          0,
-          state.selectedQuizQuestions.length,
-          playerName,
-          handleAnswerSelect
-        );
+        renderHandoff(2);
+        showScreen('handoff');
       } else {
-        // Show results
+        // Show results (1P) or victory screen (2P)
         showResults();
       }
     } else {
@@ -162,7 +178,7 @@ function showResults() {
   const player1Score = calculateScore(state.player1Answers);
 
   if (state.playerCount === 1) {
-    // Get missed question texts
+    // 1P: go straight to results
     const missedQuestions = state.player1Answers
       .filter(a => !a.correct)
       .map(a => {
@@ -172,17 +188,28 @@ function showResults() {
       .filter(t => t);
 
     renderSinglePlayerResults(player1Score, missedQuestions);
+    showScreen('results');
   } else {
+    // 2P: show victory screen first
     const player2Score = calculateScore(state.player2Answers);
     const result = determineWinner(player1Score, player2Score);
-    renderTwoPlayerResults(result);
-  }
+    renderVictory(result);
+    showScreen('victory');
 
+    // Store result for when user clicks "See Summary"
+    state.twoPlayerResult = result;
+  }
+}
+
+// Handle victory "See Summary" button
+function handleVictorySummary() {
+  renderTwoPlayerResults(state.twoPlayerResult);
   showScreen('results');
 }
 
 // Handle play again button
 function handlePlayAgain() {
+  state.twoPlayerResult = null;
   showScreen('title');
 }
 
@@ -193,8 +220,11 @@ async function init() {
   initInstallButton();
   await loadData();
   initTitleScreen(handlePlayerSelect);
+  initInstructionsScreen(handleInstructionsGo);
   initStudyScreen(handleNextRule, handleStartQuiz);
   initQuizScreen(handleSubmitAnswer);
+  initHandoffScreen(handleHandoffGo);
+  initVictoryScreen(handleVictorySummary);
   initResultsScreen(handlePlayAgain);
   showScreen('title');
 }
