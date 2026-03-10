@@ -20,6 +20,59 @@ export function initTitleScreen(onPlayerSelect) {
   });
 }
 
+// Initialize instructions screen event handlers
+export function initInstructionsScreen(onGo) {
+  document.getElementById('btn-instructions-go').addEventListener('click', onGo);
+}
+
+// Render handoff screen for a specific player
+export function renderHandoff(playerNumber) {
+  const img = document.getElementById('handoff-img');
+  const text = document.getElementById('handoff-text');
+
+  if (playerNumber === 1) {
+    img.src = 'assets/masha-run.png';
+    img.alt = 'Masha running';
+    text.textContent = "Masha is up! Bobby no fucking peeking!";
+  } else {
+    img.src = 'assets/bobby-run.png';
+    img.alt = 'Bobby running';
+    text.textContent = "Bobby is up! Masha, please kindly look away.";
+  }
+}
+
+// Initialize handoff screen event handlers
+export function initHandoffScreen(onGo) {
+  document.getElementById('btn-handoff-go').addEventListener('click', onGo);
+}
+
+// Render victory screen based on result
+export function renderVictory(result) {
+  const img = document.getElementById('victory-img');
+  const text = document.getElementById('victory-text');
+
+  if (result.winner === 'tie') {
+    img.src = '';
+    img.classList.add('hidden');
+    text.textContent = "IT'S A TIE!";
+  } else if (result.winner === 'Masha') {
+    img.src = 'assets/masha-victory.gif';
+    img.alt = 'Masha celebrates';
+    img.classList.remove('hidden');
+    text.textContent = 'MASHA WINS!';
+  } else {
+    img.src = 'assets/bobby-victory.gif';
+    img.alt = 'Bobby celebrates';
+    img.classList.remove('hidden');
+    text.textContent = 'BOBBY WINS!';
+  }
+}
+
+// Initialize victory screen event handlers
+export function initVictoryScreen(onSummary) {
+  document.getElementById('btn-victory-summary').addEventListener('click', onSummary);
+}
+
 // Render a rule on the study screen
 export function renderRule(rule, currentIndex, totalRules) {
   document.getElementById('rule-current').textContent = currentIndex + 1;
